@@ -1,0 +1,1 @@
+Building a simple map application with Mapbox JS to show off a new map style. Just playing around with the various functions and seeing whats possible. Plan to upgrade the interface drastically with animation libraries like famo.us
