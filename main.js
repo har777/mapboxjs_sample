@@ -20,7 +20,7 @@ var range = document.getElementById('range');
 range['oninput' in range ? 'oninput' : 'onchange'] = clip;
 map.on('move', clip);
 
-map.setView([-34.9207, 138.6008], 14);
+map.setView([49.4861, 8.4660], 15);
 
 clip();
 
@@ -79,9 +79,18 @@ function search(term) {
 
 Polymer('update-form', {
 	updateMap: function() {
-
 		if(this.search_term != NaN) {
 			search(this.search_term);
+		}
+		else {
+			console.log('No search term.');
+		}
+
+		if((this.latitude != NaN) && (this.longitude != NaN)) {
+			map.setView([this.latitude, this.longitude], 15);
+		}
+		else {
+			console.log('Please enter both lat lon coordinates correctly.');
 		}
 	}
 });
